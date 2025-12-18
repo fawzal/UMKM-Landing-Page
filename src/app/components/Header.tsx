@@ -15,7 +15,7 @@ export function Header() {
               <span className="text-white">CG</span>
             </div>
             <div>
-              <div className="text-primary">Camilan Gunungkidul</div>
+              <div className="text-primary">Tiwul Lestari</div>
               <div className="text-xs text-muted-foreground hidden sm:block">Cita Rasa Asli</div>
             </div>
           </div>
