@@ -8,9 +8,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl">Camilan Gedangrejo</h3>
+            <h3 className="text-2xl">KKN-T UDB Gedangrejo 2025</h3>
             <p className="text-white/80">
-              Menyajikan camilan tradisional khas Gedangrejo dengan cita rasa autentik dan kualitas terjaga.
+              Menggali potensi, memberdayakan masyarakat. Sebuah dedikasi dari Mahasiswa KKN-T Universitas Duta Bangsa Periode 2025.
             </p>
             <div className="flex gap-3">
               <a 
