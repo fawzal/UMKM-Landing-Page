@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import LogoKKN from '../../assets/LogoKKN25-2-BG-OFF.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,9 +12,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white">CG</span>
-            </div>
+            {/* Bagian yang sudah diganti */}
+            <img 
+              src={LogoKKN} 
+              alt="Logo KKN" 
+              className="w-10 h-10 object-contain" 
+            />
+            
+            {/* Bagian teks tetap sama */}
             <div>
               <div className="text-primary">KKN-T</div>
               <div className="text-xs text-muted-foreground hidden sm:block">Gedangrejo</div>
