@@ -8,13 +8,13 @@ export function HeroSection() {
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-accent">Produk UMKM Asli Gunungkidul</span>
+              <span className="text-accent">Produk UMKM Asli Gedangrejo</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary">
-              Cita Rasa Asli Gunungkidul
+              Cita Rasa Asli Gedangrejo
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
-              Nikmati kelezatan camilan tradisional khas Gunungkidul yang dibuat dengan resep turun-temurun dan bahan-bahan lokal pilihan.
+              Nikmati kelezatan camilan tradisional khas Gedangrejo yang dibuat dengan resep turun-temurun dan bahan-bahan lokal pilihan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 

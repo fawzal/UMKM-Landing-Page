@@ -8,9 +8,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl">Camilan Gunungkidul</h3>
+            <h3 className="text-2xl">Camilan Gedangrejo</h3>
             <p className="text-white/80">
-              Menyajikan camilan tradisional khas Gunungkidul dengan cita rasa autentik dan kualitas terjaga.
+              Menyajikan camilan tradisional khas Gedangrejo dengan cita rasa autentik dan kualitas terjaga.
             </p>
             <div className="flex gap-3">
               <a 
@@ -71,15 +71,15 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
-                  <a href="mailto:info@camilangunungkidul.com" className="hover:text-accent transition-colors">
-                    info@camilangunungkidul.com
+                  <a href="mailto:kkntgedangrejokarangmojo@gmail.com" className="hover:text-accent transition-colors">
+                    kkntgedangrejokarangmojo@gmail.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <div>
-                  Desa Wonosari, Gunungkidul<br />
+                  Desa Gedangrejo, Karangmojo, Gunungkidul<br />
                   Yogyakarta, Indonesia
                 </div>
               </li>
@@ -91,14 +91,14 @@ export function Footer() {
             <h4>Lokasi Kami</h4>
             <div className="relative h-40 rounded-lg overflow-hidden bg-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126214.26993558655!2d110.56093!3d-7.965588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bfb094c478b9d%3A0x3027a76e352be40!2sGunungkidul%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1234567890"
+                src="https://maps.google.com/maps?q=Gedangrejo,%20Kec.%20Karangmojo,%20Kabupaten%20Gunungkidul,%20Daerah%20Istimewa%20Yogyakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi Gunungkidul"
+                title="Lokasi Gedangrejo"
               ></iframe>
             </div>
             <Button 
@@ -115,7 +115,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 text-center text-white/60">
-          <p>&copy; 2024 Camilan Gunungkidul. Semua hak cipta dilindungi.</p>
+          <p>&copy; 2025 Camilan Gedangrejo. Semua hak cipta dilindungi.</p>
         </div>
       </div>
     </footer>

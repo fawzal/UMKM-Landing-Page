@@ -5,16 +5,16 @@ import { MessageCircle, Star } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Tiwul Instan",
-    description: "Tiwul praktis siap saji dengan cita rasa original Gunungkidul",
-    price: "Rp 15.000",
+    name: "Kripik Tempe",
+    description: "Kripik tempe praktis siap saji dengan cita rasa original Gedangrejo",
+    price: "Rp 75.00",
     image: "https://images.unsplash.com/photo-1680345576151-bbc497ba969e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRvbmVzaWFuJTIwdHJhZGl0aW9uYWwlMjBzbmFja3N8ZW58MXx8fHwxNzY1ODk2NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     rating: 4.8,
     sold: "500+",
   },
   {
     id: 2,
-    name: "Gathot Original",
+    name: "Peyek Kacang",
     description: "Makanan tradisional dari ketela pohon dengan tekstur unik",
     price: "Rp 12.000",
     image: "https://images.unsplash.com/photo-1616140799124-8d582de4bbb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGZvb2QlMjBtYXJrZXR8ZW58MXx8fHwxNzY1ODY1NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
