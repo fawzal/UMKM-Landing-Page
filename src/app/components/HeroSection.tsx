@@ -43,12 +43,12 @@ export function HeroSection() {
                 <div className="text-sm text-muted-foreground">Alami</div>
               </div>
               <div className="text-center border-x border-border">
-                <div className="text-2xl md:text-3xl text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Pelanggan</div>
+                <div className="text-2xl md:text-3xl text-primary">50+</div>
+                <div className="text-sm text-muted-foreground">Produk</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl text-primary">10+</div>
-                <div className="text-sm text-muted-foreground">Varian</div>
+                <div className="text-sm text-muted-foreground">UMKM</div>
               </div>
             </div>
           </div>

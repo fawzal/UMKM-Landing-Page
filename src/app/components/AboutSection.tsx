@@ -10,9 +10,9 @@ export function AboutSection() {
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Kami adalah UMKM keluarga yang telah memproduksi camilan tradisional khas Gedangrejo sejak tahun 2015. 
-            Setiap produk dibuat dengan tangan oleh ibu-ibu rumah tangga lokal menggunakan resep turun-temurun 
-            dan bahan-bahan alami pilihan dari petani sekitar.
+            Kami merupakan pusat UMKM di Gedangrejo yang berdedikasi mempromosikan produk lokal unggulan. 
+            Seluruh produk kami diolah secara manual (handmade) oleh warga setempat, 
+            memadukan resep warisan leluhur dengan bahan-bahan alami berkualitas dari petani sekitar.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export function AboutSection() {
             </div>
             <h3 className="text-primary">Memberdayakan Komunitas</h3>
             <p className="text-muted-foreground">
-              Melibatkan ibu-ibu rumah tangga dan petani lokal, 
+              Melibatkan warga sekitar dan petani lokal, 
               berkontribusi pada ekonomi masyarakat Gedangrejo.
             </p>
           </div>

@@ -1,131 +1,238 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { MessageCircle, Star } from "lucide-react";
+import { MessageCircle, Star, X } from "lucide-react";
 
+// Data produk diperbarui berdasarkan informasi UMKM sebelumnya
 const products = [
   {
     id: 1,
-    name: "Peyek dan Kripik Tempe Lariso",
-    description: "Peyek dan Kripik Tempe Lariso: Cita rasa otentik sejak 1996 yang diolah istimewa dengan bumbu rempah uleg asli",
-    price: "Rp 50.000-75.000",
-    image: "https://images.unsplash.com/photo-1680345576151-bbc497ba969e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRvbmVzaWFuJTIwdHJhZGl0aW9uYWwlMjBzbmFja3N8ZW58MXx8fHwxNzY1ODk2NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    rating: 4.8,
+    name: "Peyek & Kripik Tempe Lariso",
+    description: "Cita rasa otentik sejak 1996 yang diolah istimewa dengan bumbu rempah uleg asli dan minyak berkualitas.",
+    price: "Rp 65.000 - 75.000 /kg",
+    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Peyek/Keripik
+    rating: 4.9,
     sold: "500+",
+    category: "Camilan",
+    phoneNumber: "6281234567890", // Ganti dengan nomor WA Lariso jika ada
   },
   {
     id: 2,
-    name: "Warung Laras",
-    description: "Warung Laras menghadirkan cita rasa otentik Gudeg dan masakan Jawa rumahan sejak 2015 dengan sentuhan pelayanan sepenuh hati.",
-    price: "Rp 12.000",
-    image: "https://images.unsplash.com/photo-1616140799124-8d582de4bbb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGZvb2QlMjBtYXJrZXR8ZW58MXx8fHwxNzY1ODY1NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    rating: 4.9,
+    name: "Warung Laras (Gudeg)",
+    description: "Warung Laras menghadirkan cita rasa otentik Gudeg dan masakan Jawa rumahan sejak 2015 dengan pelayanan sepenuh hati.",
+    price: "Mulai Rp 10.000",
+    image: "https://images.unsplash.com/photo-1630400688005-7264a2c262a5?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Gudeg
+    rating: 4.8,
     sold: "450+",
+    category: "Makanan Berat",
+    phoneNumber: "6281234567890", // Ganti dengan nomor WA Warung Laras
   },
   {
     id: 3,
-    name: "Bakso Pak Darno 234",
-    description: "Nikmati bakso sapi dan ayam olahan Pak Darno yang lezat dan terjangkau sejak 2012.",
-    price: "Rp 7.000",
-    image: "https://images.unsplash.com/photo-1740993384870-0793845268e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXNzYXZhJTIwY2hpcHMlMjBzbmFja3xlbnwxfHx8fDE3NjU4OTY2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Bakso Pak Darno",
+    description: "Nikmati bakso sapi dan ayam olahan Pak Darno yang lezat, halal, dan terjangkau sejak 2012.",
+    price: "Rp 7.000 /porsi",
+    image: "https://images.unsplash.com/photo-1626202272213-9e4501a35750?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Bakso
     rating: 4.7,
-    sold: "600+",
+    sold: "110+ /hari",
+    category: "Makanan Berat",
+    phoneNumber: "6281234567890", // Ganti dengan nomor WA Pak Darno
   },
   {
     id: 4,
-    name: "Dawet Pak Dul",
-    description: "Es Dawet Pak Dul menyajikan kesegaran dawet dari bahan pilihan yang pas di kantong.",
+    name: "Es Dawet Pak Dul",
+    description: "Rasakan kesegaran alami Es Dawet Pak Dul yang diracik khusus menggunakan bahan asli dari Klaten.",
     price: "Rp 4.000",
-    image: "https://images.unsplash.com/photo-1740993384870-0793845268e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXNzYXZhJTIwY2hpcHMlMjBzbmFja3xlbnwxfHx8fDE3NjU4OTY2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1558561726-1b03332463e2?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Dawet/Minuman Hijau
     rating: 4.8,
-    sold: "550+",
+    sold: "150+ /hari",
+    category: "Minuman",
+    phoneNumber: "6281234567890", // Ganti dengan nomor WA Pak Dul
   },
   {
     id: 5,
-    name: "Mie Ayam Langgoex",
-    description: "Tiwul dengan tambahan gula kelapa untuk rasa manis alami",
-    price: "Rp 10.000",
-    image: "https://images.unsplash.com/photo-1680345576151-bbc497ba969e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRvbmVzaWFuJTIwdHJhZGl0aW9uYWwlMjBzbmFja3N8ZW58MXx8fHwxNzY1ODk2NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    rating: 4.6,
-    sold: "400+",
+    name: "Kocokin Aja (Alpukat Kocok)",
+    description: "Segarkan harimu dengan Es Kocok Alpukat 'Kocokin Aja Karangmojo' yang nikmat dan ramah di kantong.",
+    price: "Mulai Rp 7.000",
+    image: "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Jus Alpukat
+    rating: 5.0,
+    sold: "25+ /hari",
+    category: "Minuman",
+    phoneNumber: "6285967023086", // Sesuai data input
   },
   {
     id: 6,
-    name: "Rumah Makan Bebek Goreng Pak Koes",
-    description: "Paket berisi Tiwul, Gathot, dan Kripik",
-    price: "Rp 40.000",
-    image: "https://images.unsplash.com/photo-1616140799124-8d582de4bbb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGZvb2QlMjBtYXJrZXR8ZW58MXx8fHwxNzY1ODY1NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    rating: 5.0,
+    name: "Rumah Makan Nasi Padang Asli",
+    description: "Rasakan kelezatan otentik masakan Minang yang diracik langsung oleh keluarga asli Padang dengan resep turun-temurun.",
+    price: "Mulai Rp 15.000",
+    image: "https://images.unsplash.com/photo-1594982622797-1517cb588523?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Nasi Padang/Rendang
+    rating: 4.9,
     sold: "300+",
-  },
-  {
-    id: 6,
-    name: "Mie Ayam",
-    description: "Paket berisi Tiwul, Gathot, dan Kripik",
-    price: "Rp 40.000",
-    image: "https://images.unsplash.com/photo-1616140799124-8d582de4bbb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGZvb2QlMjBtYXJrZXR8ZW58MXx8fHwxNzY1ODY1NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    rating: 5.0,
-    sold: "300+",
+    category: "Makanan Berat",
+    phoneNumber: "6289652215073", // Sesuai data input
   },
 ];
 
 export function ProductsSection() {
+  // State untuk menyimpan produk yang sedang dipilih
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+
+  // Helper function untuk format nomor WA (menghapus 0 di depan jika user input manual, dll)
+  const getWhatsAppLink = (product: typeof products[0]) => {
+    // Default number jika tidak ada di data
+    const phoneNumber = product.phoneNumber || "6281234567890";
+    const text = encodeURIComponent(`Halo, saya ingin memesan ${product.name}. Apakah masih tersedia?`);
+    return `https://wa.me/${phoneNumber}?text=${text}`;
+  };
+
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-[#FFF9F5] to-[#F5E6D3]">
       <div className="container mx-auto px-4">
+        {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-primary mb-4">
-            Produk Terlaris
+          <h2 className="text-3xl md:text-4xl text-primary font-bold mb-4">
+            UMKM Unggulan Desa
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Camilan favorit pelanggan kami yang wajib Anda coba
+            Dukung ekonomi lokal dengan menikmati produk-produk terbaik dari UMKM warga kami.
           </p>
         </div>
 
+        {/* Grid Produk */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product) => (
-            <Card 
-              key={product.id} 
-              className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-white border-border"
+            <Card
+              key={product.id}
+              onClick={() => setSelectedProduct(product)}
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 bg-white border-none cursor-pointer hover:-translate-y-1 rounded-xl"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-current" />
-                  <span>{product.rating}</span>
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full flex items-center gap-1 shadow-md text-sm">
+                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <span className="font-bold">{product.rating}</span>
+                </div>
+                <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium shadow-md">
+                    {product.category}
                 </div>
               </div>
-              
+
               <div className="p-6 space-y-4">
                 <div>
-                  <h3 className="text-primary mb-2">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <h3 className="text-gray-900 text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-3 line-clamp-2 leading-relaxed">
                     {product.description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-secondary">{product.price}</span>
-                    <span className="text-xs text-muted-foreground">Terjual {product.sold}</span>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-orange-600 font-bold text-lg">{product.price}</span>
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-md">
+                      Terjual {product.sold}
+                    </span>
                   </div>
                 </div>
-                
-                <Button 
-                  className="w-full bg-accent hover:bg-accent/90"
-                  asChild
+
+                <Button
+                  className="w-full bg-gray-900 hover:bg-gray-800 text-white"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(getWhatsAppLink(product), '_blank');
+                  }}
                 >
-                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Pesan via WhatsApp
-                  </a>
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Pesan Sekarang
                 </Button>
               </div>
             </Card>
           ))}
         </div>
       </div>
+
+      {/* MODAL / POPUP DETAIL PRODUK */}
+      {selectedProduct && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setSelectedProduct(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full shadow-2xl relative animate-in zoom-in-95 duration-200 flex flex-col md:flex-row max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Tombol Close */}
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-white rounded-full text-gray-500 hover:text-red-500 transition-colors shadow-sm"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Gambar Besar */}
+            <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Informasi Detail */}
+            <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col overflow-y-auto bg-white">
+              <div className="mb-auto">
+                <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                      Recommended
+                    </span>
+                    <div className="flex items-center gap-1 text-yellow-500">
+                      <Star className="w-4 h-4 fill-current" />
+                      <span className="text-sm font-medium text-gray-700">{selectedProduct.rating} Rating</span>
+                    </div>
+                </div>
+
+                <h3 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
+                  {selectedProduct.name}
+                </h3>
+                
+                <p className="text-2xl font-bold text-orange-600 mb-6">
+                  {selectedProduct.price}
+                </p>
+
+                <div className="space-y-4 text-gray-600 mb-8">
+                  <p className="text-lg leading-relaxed">{selectedProduct.description}</p>
+                  
+                  <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-sm">Kenapa harus beli ini?</h4>
+                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <li>Bahan baku berkualitas & higienis</li>
+                      <li>Harga terjangkau untuk semua kalangan</li>
+                      <li>Mendukung UMKM Warga Lokal</li>
+                      <li>Tersedia pengiriman cepat/COD</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-gray-100">
+                <Button 
+                  className="w-full h-12 text-lg bg-green-600 hover:bg-green-700 text-white gap-2 rounded-xl"
+                  onClick={() => window.open(getWhatsAppLink(selectedProduct), '_blank')}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Hubungi Penjual (WhatsApp)
+                </Button>
+                <p className="text-center text-xs text-gray-400 mt-3">
+                  Anda akan diarahkan langsung ke WhatsApp pemilik usaha.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -37,9 +37,6 @@ export function Header() {
             <a href="#produk" className="text-foreground hover:text-primary transition-colors">
               Produk
             </a>
-            <a href="#testimoni" className="text-foreground hover:text-primary transition-colors">
-              Testimoni
-            </a>
             <a href="#kontak" className="text-foreground hover:text-primary transition-colors">
               Kontak
             </a>
