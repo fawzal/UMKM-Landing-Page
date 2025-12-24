@@ -33,7 +33,7 @@ export function HeroSection() {
                 asChild
               >
                 <a href="#produk">
-                  Lihat Menu
+                  Lihat Semua UMKM
                 </a>
               </Button>
             </div>

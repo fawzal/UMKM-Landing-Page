@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { MessageCircle, Star, X } from "lucide-react";
+import DawetImg from "../../assets/Dawet_Pakdul.jpeg";
+import BaksoImg from "../../assets/Bakso_MasDarno.jpeg";
 
 // Data produk diperbarui berdasarkan informasi UMKM sebelumnya
 const products = [
@@ -32,7 +34,7 @@ const products = [
     name: "Bakso Pak Darno",
     description: "Nikmati bakso sapi dan ayam olahan Pak Darno yang lezat, halal, dan terjangkau sejak 2012.",
     price: "Rp 7.000 /porsi",
-    image: "https://images.unsplash.com/photo-1626202272213-9e4501a35750?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Bakso
+    image: BaksoImg, // Ilustrasi Bakso
     rating: 4.7,
     sold: "110+ /hari",
     category: "Makanan Berat",
@@ -43,7 +45,7 @@ const products = [
     name: "Es Dawet Pak Dul",
     description: "Rasakan kesegaran alami Es Dawet Pak Dul yang diracik khusus menggunakan bahan asli dari Klaten.",
     price: "Rp 4.000",
-    image: "https://images.unsplash.com/photo-1558561726-1b03332463e2?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Dawet/Minuman Hijau
+    image: DawetImg, // Ilustrasi Dawet/Minuman Hijau
     rating: 4.8,
     sold: "150+ /hari",
     category: "Minuman",

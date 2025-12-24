@@ -1,11 +1,11 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle, Music } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Footer() {
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[1.5fr_0.6fr_1fr_1fr] gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-2xl">KKN-T UDB Gedangrejo 2025</h3>
@@ -14,14 +14,14 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a 
-                href="#" 
+                href="https://tiktok.com/@kknt.udb.gedangrejo" 
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Facebook"
+                aria-label="Tiktok"
               >
-                <Facebook className="w-5 h-5" />
+                <Music className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://instagram.com/kkn.gedangrejo" 
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
