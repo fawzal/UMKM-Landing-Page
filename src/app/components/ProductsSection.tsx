@@ -4,6 +4,9 @@ import { Card } from "./ui/card";
 import { MessageCircle, Star, X } from "lucide-react";
 import DawetImg from "../../assets/Dawet_Pakdul.jpeg";
 import BaksoImg from "../../assets/Bakso_MasDarno.jpeg";
+import KripikImg from "../../assets/Kripik_Lariso.jpeg";
+import GudegImg from "../../assets/Gudek_Laras.jpeg";
+import NasiPadangImg from "../../assets/Nasi_Padang.jpeg";
 
 // Data produk diperbarui berdasarkan informasi UMKM sebelumnya
 const products = [
@@ -12,7 +15,7 @@ const products = [
     name: "Peyek & Kripik Tempe Lariso",
     description: "Cita rasa otentik sejak 1996 yang diolah istimewa dengan bumbu rempah uleg asli dan minyak berkualitas.",
     price: "Rp 65.000 - 75.000 /kg",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Peyek/Keripik
+    image: KripikImg,
     rating: 4.9,
     sold: "500+",
     category: "Camilan",
@@ -23,7 +26,7 @@ const products = [
     name: "Warung Laras (Gudeg)",
     description: "Warung Laras menghadirkan cita rasa otentik Gudeg dan masakan Jawa rumahan sejak 2015 dengan pelayanan sepenuh hati.",
     price: "Mulai Rp 10.000",
-    image: "https://images.unsplash.com/photo-1630400688005-7264a2c262a5?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Gudeg
+    image: GudegImg, // Ilustrasi Gudeg
     rating: 4.8,
     sold: "450+",
     category: "Makanan Berat",
@@ -67,7 +70,7 @@ const products = [
     name: "Rumah Makan Nasi Padang Asli",
     description: "Rasakan kelezatan otentik masakan Minang yang diracik langsung oleh keluarga asli Padang dengan resep turun-temurun.",
     price: "Mulai Rp 15.000",
-    image: "https://images.unsplash.com/photo-1594982622797-1517cb588523?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Nasi Padang/Rendang
+    image: NasiPadangImg, // Ilustrasi Nasi Padang/Rendang
     rating: 4.9,
     sold: "300+",
     category: "Makanan Berat",
