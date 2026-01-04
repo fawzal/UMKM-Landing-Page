@@ -7,6 +7,7 @@ import BaksoImg from "../../assets/Bakso_MasDarno.jpeg";
 import KripikImg from "../../assets/Kripik_Lariso.jpeg";
 import GudegImg from "../../assets/Gudek_Laras.jpeg";
 import NasiPadangImg from "../../assets/Nasi_Padang.jpeg";
+import AlpukatKocokImg from "../../assets/Alpukat_Kocok.jpeg";
 
 // Data produk diperbarui berdasarkan informasi UMKM sebelumnya
 const products = [
@@ -59,7 +60,7 @@ const products = [
     name: "Kocokin Aja (Alpukat Kocok)",
     description: "Segarkan harimu dengan Es Kocok Alpukat 'Kocokin Aja Karangmojo' yang nikmat dan ramah di kantong.",
     price: "Mulai Rp 7.000",
-    image: "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=1080&auto=format&fit=crop", // Ilustrasi Jus Alpukat
+    image: AlpukatKocokImg,
     rating: 5.0,
     sold: "25+ /hari",
     category: "Minuman",

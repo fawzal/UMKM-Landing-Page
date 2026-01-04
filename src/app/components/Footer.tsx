@@ -42,10 +42,10 @@ export function Footer() {
             <h4>Tautan Cepat</h4>
             <ul className="space-y-2 text-white/80">
               <li>
-                <a href="#" className="hover:text-accent transition-colors">Tentang Kami</a>
+                <a href="#beranda" className="hover:text-accent transition-colors">Tentang Kami</a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">Produk</a>
+                <a href="#produk" className="hover:text-accent transition-colors">Produk</a>
               </li>
               <li>
                 <a href="#" className="hover:text-accent transition-colors">Cara Pemesanan</a>
