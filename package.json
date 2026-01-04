@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "npx vite build",
+    "prebuild": "chmod +x ./node_modules/.bin/vite",
+    "build": "vite build",
     "dev": "vite"
   },
   "dependencies": {
