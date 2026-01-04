@@ -8,9 +8,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-[1.5fr_0.6fr_1fr_1fr] gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl">KKN-T UDB Gedangrejo 2025</h3>
+            <h3 className="text-2xl">KKN-T UDB Gedangrejo 2025/2026</h3>
             <p className="text-white/80">
-              Menggali potensi, memberdayakan masyarakat. Sebuah dedikasi dari Mahasiswa KKN-T Universitas Duta Bangsa Periode 2025.
+              Menggali potensi, memberdayakan masyarakat. Sebuah dedikasi dari Mahasiswa KKN-T Universitas Duta Bangsa Periode 2025/2026.
             </p>
             <div className="flex gap-3">
               <a 
@@ -115,7 +115,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 text-center text-white/60">
-          <p>&copy; 2025 Camilan Gedangrejo. Semua hak cipta dilindungi.</p>
+          <p>&copy; 2026 Camilan Gedangrejo. Semua hak cipta dilindungi.</p>
         </div>
       </div>
     </footer>

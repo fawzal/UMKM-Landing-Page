@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 // 1. Import gambar utama dan gambar latar
-import DawetImg from "../../assets/Dawet_Pakdul.jpeg";
+import HeroImg from "../../assets/Hero Image.png";
 import BaksoImg from "../../assets/Bakso_MasDarno.jpeg"; // Ganti dengan nama file gambar latar Anda
 
 export function HeroSection() {
@@ -46,7 +46,7 @@ export function HeroSection() {
             {/* 3. IMAGE UTAMA */}
             <div className="absolute inset-0 overflow-hidden rounded-3xl shadow-2xl border-4 border-white">
               <img
-                src={DawetImg}
+                src={HeroImg}
                 alt="Dawet Pak Dul Gedangrejo"
                 className="w-full h-full object-cover"
               />
